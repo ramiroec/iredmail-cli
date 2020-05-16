@@ -40,7 +40,7 @@ func GetIredMailVersion() (iredMailVersion, error) {
 		return version, err
 	}
 
-	re := regexp.MustCompile(`^\d\.\d\.\d\s*MYSQL\s*edition`)
+	re := regexp.MustCompile(^\d\.\d\.\d\s*(MYSQL|MARIADB)\s*edition)
 	versionLine := re.FindString(string(file))
 
 	if versionLine == "" {
